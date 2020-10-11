@@ -30,13 +30,19 @@ def send_message():
 	time.sleep(4)
 	message_box.send_keys("Hi {}, I am WhatsApp bot. This is a scheduled message for you at {}".format(user_name.split()[0],scheduled_time)+Keys.ENTER)
 
+def hasxpath(xpath):
+    	try:
+        	chrome_browser.find_element_by_xpath(xpath)
+        	return True
+    	except:
+        	return False
 
 if __name__=="__main__":
 	options=webdriver.ChromeOptions()
-	options.add_argument('--user-data-dir=C:/Users/user/AppData/Local/Google/Chrome/User Data/Default')
+	options.add_argument('--user-data-dir=C:/Users/Rony/AppData/Local/Google/Chrome/User Data/Default')
 	options.add_argument('--profile-directory=Default')
 
-	chrome_browser=webdriver.Chrome(executable_path = 'C:/Users/user/Downloads/chromedriver.exe', options=options)
+	chrome_browser=webdriver.Chrome(executable_path = 'C:/Users/Rony/Downloads/chromedriver.exe', options=options)
 	chrome_browser.get('https://web.whatsapp.com/')
 	time.sleep(15)
 
@@ -100,7 +106,7 @@ if __name__=="__main__":
 
 	elif(choice==3):
 	 unreadMsgs = chrome_browser.find_elements_by_xpath('//span[@class="_31gEB"]')
-	 if chrome_browser.find_element_by_xpath('//img[@class="_2goTk _1Jdop _3Whw5"]') == True :
+	 if hasxpath('//img[@class="_2goTk _1Jdop _3Whw5"]') == True :
 	  propic = chrome_browser.find_element_by_xpath('//img[@class="_2goTk _1Jdop _3Whw5"]')
 	  propic.click()
 	 else:
