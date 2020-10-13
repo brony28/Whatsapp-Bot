@@ -39,10 +39,10 @@ def hasxpath(xpath):
 
 if __name__=="__main__":
 	options=webdriver.ChromeOptions()
-	options.add_argument('--user-data-dir=C:/Users/Rony/AppData/Local/Google/Chrome/User Data/Default')
+	options.add_argument('--user-data-dir=C:/Users/user/AppData/Local/Google/Chrome/User Data/Default')
 	options.add_argument('--profile-directory=Default')
 
-	chrome_browser=webdriver.Chrome(executable_path = 'C:/Users/Rony/Downloads/chromedriver.exe', options=options)
+	chrome_browser=webdriver.Chrome(executable_path = 'C:/Users/user/Downloads/chromedriver.exe', options=options)
 	chrome_browser.get('https://web.whatsapp.com/')
 	time.sleep(15)
 
@@ -123,6 +123,9 @@ if __name__=="__main__":
 	 		time.sleep(5)
 	 		message_box=chrome_browser.find_element_by_xpath('//div[@class="_3uMse"]')
 	 		message_box.send_keys(text.format(sender.text)+Keys.ENTER)
+	gotochats= chrome_browser.find_element_by_xpath('//button[@class="t4a8o"]')
+	gotochats.click()
+			
 
 
 	
