@@ -124,10 +124,10 @@ if __name__=="__main__":
 	 		time.sleep(5)
 	 		message_box=chrome_browser.find_element_by_xpath('//div[@class="_3uMse"]')
 	 		message_box.send_keys(text.format(sender.text)+Keys.ENTER)
-	 gotochats= chrome_browser.find_element_by_xpath('//button[@class="t4a8o"]')
-	 gotochats.click()
+	#  gotochats= chrome_browser.find_element_by_xpath('//button[@class="t4a8o"]')
+	#  gotochats.click()
 	# latest message
-	newmsg = chrome_browser.find_element_by_xpath('//span[@class="_3ko75 _5h6Y_ _3Whw5"]').text
+	# newmsg = chrome_browser.find_element_by_xpath('//span[@class="_3ko75 _5h6Y_ _3Whw5"]').text
 			
 
 
