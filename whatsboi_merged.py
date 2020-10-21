@@ -106,6 +106,7 @@ if __name__=="__main__":
 
 	elif(choice==3):
 	 unreadMsgs = chrome_browser.find_elements_by_xpath('//span[@class="_31gEB"]')
+	 newmsg = chrome_browser.find_element_by_xpath('//span[@class="_3ko75 _5h6Y_ _3Whw5"]').text
 	 if hasxpath('//img[@class="_2goTk _1Jdop _3Whw5"]') == True :
 	  propic = chrome_browser.find_element_by_xpath('//img[@class="_2goTk _1Jdop _3Whw5"]')
 	  propic.click()
@@ -117,14 +118,16 @@ if __name__=="__main__":
 	 	print("Total unread messages: 0")
 	 else:
 	 	print("Total unread messages: "+ str(len(unreadMsgs)))
-	 	text = "Hi! I am Whatsboi! {} is kinda busy right now and will reply ASAP. BTW this is an automated message."
+	 	text = "Hi! I am Whatsboi! {} is kinda busy right now and will reply ASAP. BTW this is an automated message. The message you sent {}"
 	 	for msg in unreadMsgs:
 	 		msg.click()
 	 		time.sleep(5)
 	 		message_box=chrome_browser.find_element_by_xpath('//div[@class="_3uMse"]')
 	 		message_box.send_keys(text.format(sender.text)+Keys.ENTER)
-	gotochats= chrome_browser.find_element_by_xpath('//button[@class="t4a8o"]')
-	gotochats.click()
+	 gotochats= chrome_browser.find_element_by_xpath('//button[@class="t4a8o"]')
+	 gotochats.click()
+	# latest message
+	newmsg = chrome_browser.find_element_by_xpath('//span[@class="_3ko75 _5h6Y_ _3Whw5"]').text
 			
 
 
